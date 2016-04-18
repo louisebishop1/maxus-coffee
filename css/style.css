@@ -1,0 +1,119 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700);
+
+body {
+  /*propertyName: value;*/
+  /*font-family allows us to add multiple fonts to our page. We add the fonts in order
+  of preference, to make sure our page looks how we'd like across the board. This is called a font-stack*/
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  /* line height is relative to font size, here we set it to 1.8 times our font-size,so the line-height is 1.8 * 16px*/
+  line-height: 1.8;
+  /*text-align allows us to align text & images on our page*/
+  text-align: center;
+  background-color: #d4d4d4;
+  /*To change text colour*/
+  color: #585858;
+}
+
+header {
+  /*Box Model*/
+  /*To push the title in theo the middle of header, we need to create space around it. All elements on our page use the box model. Each element's dimnesions are taken from the content inside of them. To adjust this we can use padding, border & margin.
+  Padding & margin take 4 values, top, right, bottom & left, separated by spaces. When adding 0 on any side, don't use px
+  */
+  padding: 200px 0 200px 0;
+  background-image: url(../images/splash.jpg);
+  /*to align our image so the darker half shows, use background-position. This takes two values, the horizontal alignment & the vertical alignment*/
+  background-position: center bottom;
+  /*to turn off image tiling*/
+  background-repeat: no-repeat;
+  /*to make the background image fill the space*/
+  background-size: cover;
+
+}
+
+nav {
+  background-color: #ffda0d;
+  padding: 20px 0 20px 0;
+}
+
+/*As we have multiple anchor tags across our site, we use 'nav a' to apply styles only to anchor tags found in the nav*/
+nav a {
+  /*capitalise everything*/
+  text-transform: uppercase;
+  /*make the links bold*/
+  font-weight: bold;
+  /*increase the space between links, we use padding to do this to make the links hit area bigger*/
+  padding: 0 20px 0 20px;
+  /*remove underlines*/
+  text-decoration: none;
+  /*change text colour to grey*/
+  color: #444444;
+}
+
+/*to change an elements hover state, write the name of the element followed by :hover. Here we want the links to have an underline & change colour, you can add any properties/styles to a hover state*/
+nav a:hover {
+  text-decoration: underline;
+  color: #585858;
+}
+
+section {
+  /*use max-width to specify a width but also allow it to shrink on smaller screen sizes*/
+  max-width: 720px;
+  background-color: #ffffff;
+  /*elements are either inline or block & these elements must be centrally aligned using different properties. Inline lements like text, images & anchor tags can be centrally algined using text-align: center, but block level elements like header, section etc must use margin: 0 auto;*/
+  margin: 0 auto 0 auto;
+  /*when the padding is the same on all sides, we can use shorthand3*/
+  padding: 40px;
+}
+
+h2 {
+  font-size: 35px;
+  margin-top: 40px;
+  text-transform: uppercase;
+}
+
+h3 {
+ color: #a3a3a3;
+ margin-bottom: 30px;
+ text-transform: uppercase;
+}
+
+/*to style up more than one element at a time, separate them using a comma, then apply your styles - do not repeat yourself*/
+p, blockquote {
+  font-size: 22px;
+  font-weight: 300;
+  margin: 20px 0 20px 0;
+}
+
+footer {
+  background-color: #ffda0d;
+  padding: 40px 0 40px 0;
+}
+
+small {
+  display: block;
+  margin-top: 20px;
+}
+
+/*To apply styles to elements with class="quote"*/
+.quote {
+  background-color: #ffda0d;
+}
+
+/*Media queries*/
+
+@media screen and (max-width: 720px) {
+  /*To make our images & iframes sit within their sections, we use max-width 100%*/
+  img, iframe {
+    max-width: 100%;
+  }
+  /*Reduce the padding around the header to show more content on smaller screen sizes*/
+  header {
+    padding: 100px 20px 100px 20px;
+  }
+
+  nav a {
+    /*to stack each link on top of one another*/
+    display: block;
+  }
+}
